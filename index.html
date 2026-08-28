@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>a perfect day ♡</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Trebuchet MS", sans-serif;
+            background: #fff8f9;
+            color: #5a4148;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 90%;
+            max-width: 900px;
+
+            padding: 13px 25px;
+
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(10px);
+
+            border: 1px solid #f3d6dc;
+            border-radius: 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            color: #c76b83;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #76535d;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #d76c8b;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 25px;
+
+            background: #fde8ed;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .little-note {
+            background: white;
+            padding: 9px 18px;
+
+            border-radius: 5px;
+
+            color: #c56d83;
+            font-size: 13px;
+
+            transform: rotate(-3deg);
+
+            margin-bottom: 25px;
+
+            box-shadow: 3px 5px 15px rgba(120,70,80,0.08);
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+
+            font-size: clamp(55px, 9vw, 105px);
+
+            font-weight: normal;
+
+            color: #9e536b;
+
+            line-height: 0.95;
+
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: #d77991;
+            font-style: italic;
+        }
+
+        .hero p {
+            margin-top: 25px;
+
+            max-width: 500px;
+
+            font-family: Georgia, serif;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+            color: #795864;
+        }
+
+        .start-btn {
+            margin-top: 35px;
+
+            padding: 14px 30px;
+
+            background: #d87993;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            box-shadow: 0 7px 15px rgba(180,90,115,0.18);
+
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-4px) rotate(-1deg);
+            background: #c96782;
+        }
+
+
+        /* LITTLE DECORATIONS */
+
+        .doodle {
+            position: absolute;
+
+            color: #d98aa0;
+
+            font-size: 30px;
+
+            opacity: 0.7;
+        }
+
+        .heart {
+            top: 25%;
+            left: 12%;
+            transform: rotate(-15deg);
+        }
+
+        .flower {
+            bottom: 20%;
+            right: 12%;
+            transform: rotate(10deg);
+        }
+
+        .sparkle {
+            top: 18%;
+            right: 20%;
+        }
+
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            min-height: 100vh;
+
+            padding: 120px 25px;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .section-label {
+            color: #d07891;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 11px;
+
+            margin-bottom: 15px;
+        }
+
+        section h2 {
+            font-family: Georgia, serif;
+
+            font-weight: normal;
+
+            font-size: clamp(38px, 5vw, 60px);
+
+            color: #9c586d;
+
+            margin-bottom: 20px;
+        }
+
+        section > p {
+            max-width: 600px;
+
+            font-family: Georgia, serif;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            color: #765864;
+        }
+
+
+        /* ================= MORNING ================= */
+
+        #morning {
+            background: #fff8f6;
+        }
+
+        .morning-wrapper {
+            margin-top: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+        }
+
+        .polaroid {
+            background: white;
+
+            padding: 12px 12px 35px;
+
+            width: 220px;
+
+            box-shadow: 4px 8px 25px rgba(100,50,60,0.12);
+
+            transform: rotate(-4deg);
+
+            transition: 0.4s;
+        }
+
+        .polaroid:hover {
+            transform: rotate(1deg) translateY(-8px);
+        }
+
+        .fake-photo {
+            height: 190px;
+
+            background: #f5cfd7;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 55px;
+        }
+
+        .polaroid p {
+            margin-top: 12px;
+
+            font-family: "Comic Sans MS", cursive;
+
+            font-size: 14px;
+
+            color: #9d6574;
+        }
+
+        .morning-note {
+            width: 260px;
+
+            background: #fff0b8;
+
+            padding: 28px;
+
+            transform: rotate(3deg);
+
+            box-shadow: 3px 7px 15px rgba(100,70,20,0.08);
+
+            font-family: "Comic Sans MS", cursive;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= AFTERNOON ================= */
+
+        #afternoon {
+            background: #f9dfe5;
+        }
+
+        .activity-grid {
+            margin-top: 45px;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 150px);
+
+            gap: 18px;
+        }
+
+        .activity {
+            background: #fffafa;
+
+            padding: 25px 15px;
+
+            border-radius: 12px;
+
+            border: 1px solid #f0cbd3;
+
+            box-shadow: 3px 5px 12px rgba(130,70,85,0.06);
+
+            transition: 0.3s;
+        }
+
+        .activity:nth-child(1) {
+            transform: rotate(-2deg);
+        }
+
+        .activity:nth-child(2) {
+            transform: rotate(2deg);
+        }
+
+        .activity:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+
+        .activity:nth-child(4) {
+            transform: rotate(2deg);
+        }
+
+        .activity:hover {
+            transform: translateY(-8px) rotate(0deg);
+        }
+
+        .activity .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .activity h3 {
+            font-family: Georgia, serif;
+
+            font-weight: normal;
+
+            color: #9c586d;
+        }
+
+        .activity p {
+            font-size: 12px;
+
+            margin-top: 7px;
+
+            color: #87636c;
+        }
+
+
+        /* ================= EVENING ================= */
+
+        #evening {
+            background: #f4cbd2;
+        }
+
+        .sunset-card {
+            margin-top: 40px;
+
+            width: min(500px, 90%);
+
+            padding: 50px 30px;
+
+            background: #fff8f4;
+
+            border-radius: 50% 50% 10px 10px;
+
+            box-shadow: 0 15px 35px rgba(120,60,70,0.1);
+
+            position: relative;
+        }
+
+        .sunset {
+            font-size: 70px;
+
+            margin-bottom: 20px;
+        }
+
+        .sunset-card p {
+            font-family: Georgia, serif;
+
+            font-style: italic;
+
+            line-height: 1.8;
+        }
+
+
+        /* ================= NIGHT ================= */
+
+        #night {
+            background: #33283b;
+
+            color: white;
+        }
+
+        #night h2 {
+            color: #ffdce5;
+        }
+
+        #night .section-label {
+            color: #e9a2b7;
+        }
+
+        #night > p {
+            color: #eadde1;
+        }
+
+        .night-note {
+            margin-top: 40px;
+
+            max-width: 500px;
+
+            background: #fff4f6;
+
+            color: #654652;
+
+            padding: 35px;
+
+            border-radius: 5px;
+
+            transform: rotate(-2deg);
+
+            box-shadow: 5px 8px 25px rgba(0,0,0,0.2);
+
+            font-family: Georgia, serif;
+
+            line-height: 1.8;
+        }
+
+        .night-note strong {
+            color: #c56782;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #33283b;
+
+            color: #d9cbd0;
+
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                width: 94%;
+            }
+
+            nav .links {
+                display: none;
+            }
+
+            .activity-grid {
+                grid-template-columns: repeat(2, 140px);
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            a perfect day ♡
+        </div>
+
+        <div class="links">
+            <a href="#morning">morning</a>
+            <a href="#afternoon">afternoon</a>
+            <a href="#evening">evening</a>
+            <a href="#night">night</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="doodle heart">♡</div>
+        <div class="doodle flower">✿</div>
+        <div class="doodle sparkle">✦</div>
+
+        <div class="little-note">
+            a tiny reminder to enjoy today
+        </div>
+
+        <h1>
+            a <span>perfect</span><br>
+            day
+        </h1>
+
+        <p>
+            A collection of little moments that make
+            an ordinary day feel a little more special.
+        </p>
+
+        <a href="#morning" class="start-btn">
+            start the day ♡
+        </a>
+
+    </header>
+
+
+    <!-- MORNING -->
+
+    <section id="morning">
+
+        <div class="section-label">
+            07:00 AM · chapter one
+        </div>
+
+        <h2>slow mornings</h2>
+
+        <p>
+            No rushing. No alarms screaming at you.
+            Just sunlight through the curtains,
+            something warm to drink, and a little
+            time to yourself.
+        </p>
+
+
+        <div class="morning-wrapper">
+
+            <div class="polaroid">
+
+                <div class="fake-photo">
+                    ☕
+                </div>
+
+                <p>
+                    "morning coffee & quiet thoughts"
+                </p>
+
+            </div>
+
+
+            <div class="morning-note">
+
+                today's little things:
+
+                <br><br>
+
+                ✿ open the curtains<br>
+                ✿ play your favorite song<br>
+                ✿ eat something yummy<br>
+                ✿ don't rush
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AFTERNOON -->
+
+    <section id="afternoon">
+
+        <div class="section-label">
+            01:00 PM · chapter two
+        </div>
+
+        <h2>do what makes you happy</h2>
+
+        <p>
+            The afternoon is yours.
+            Spend it creating, exploring,
+            laughing, learning, or simply doing nothing.
+        </p>
+
+
+        <div class="activity-grid">
+
+            <div class="activity">
+
+                <div class="icon">🎨</div>
+
+                <h3>create</h3>
+
+                <p>
+                    Make something just because you can.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="icon">🎧</div>
+
+                <h3>listen</h3>
+
+                <p>
+                    Put your favorite playlist on.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="icon">📖</div>
+
+                <h3>learn</h3>
+
+                <p>
+                    Follow your curiosity.
+                </p>
+
+            </div>
+
+
+            <div class="activity">
+
+                <div class="icon">🌷</div>
+
+                <h3>explore</h3>
+
+                <p>
+                    Go somewhere you've never been.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVENING -->
+
+    <section id="evening">
+
+        <div class="section-label">
+            06:30 PM · chapter three
+        </div>
+
+        <h2>golden hour</h2>
+
+        <p>
+            The kind of evening where you stop for a
+            second just to look at the sky.
+        </p>
+
+
+        <div class="sunset-card">
+
+            <div class="sunset">
+                🌅
+            </div>
+
+            <p>
+                "Maybe the best moments are the ones
+                we don't plan."
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- NIGHT -->
+
+    <section id="night">
+
+        <div class="section-label">
+            10:30 PM · final chapter
+        </div>
+
+        <h2>goodnight, lovely day</h2>
+
+        <p>
+            The lights are off, the world is quiet,
+            and there's nowhere else you need to be.
+        </p>
+
+
+        <div class="night-note">
+
+            <p>
+                Before you sleep, remember:
+                today doesn't have to be perfect
+                to be beautiful.
+            </p>
+
+            <br>
+
+            <strong>
+                thank you for spending the day here ♡
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        made with a little love & lots of pink ♡
+    </footer>
+
+
+</body>
+</html>
